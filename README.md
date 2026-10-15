@@ -1,0 +1,51 @@
+# DesktopToStartMenu (桌面项目同步至开始菜单工具)
+
+专门用于解决 **“免安装绿色软件（如 v2rayN、HBuilder X 等）只放在桌面，导致 Flow Launcher、Wox 或 Windows 搜索搜不到”** 的实用小工具。
+
+---
+
+## 🌟 核心特性
+
+1. **自动双桌面扫描**：自动同时扫描「当前用户桌面」（支持 `%USERPROFILE%\Desktop` 及用户自定义的重定向桌面目录）与系统「公用桌面」(`C:\Users\Public\Desktop`)。
+2. **智能状态比对**：自动检测各项目在开始菜单中的存在状态，精确标记为 **“已存在”** 或 **“未添加”**，并自动提取真实高清图标。
+3. **快捷智能勾选**：
+   - 默认智能勾选所有「未添加项」；
+   - 提供「仅选未添加项」、「全选」、「全不选」、「反选」等一键操作按钮。
+4. **名称规范化清理**：自动清理 Windows 生成的 `- 快捷方式`、`- 副本`、`.exe` 冗余后缀，让 Flow Launcher 索引的名字更干净整洁。
+5. **绿色免安装单文件**：采用 .NET 8 原生轻量构建，打包为单一 `.exe` 文件（仅 180 KB），开箱即用。
+6. **Flow Launcher 友好**：支持一键打开开始菜单目录查看，同步完成后自动提醒唤出 Flow Launcher 输入 `reload` 刷新缓存。
+
+---
+
+## 🚀 启动与使用
+
+### 方式 1：直接运行已编译的单文件应用（推荐）
+双击打开：
+`DesktopToStartMenu\publish\DesktopToStartMenu.exe`
+或直接双击根目录下的 `启动工具.bat`。
+
+### 方式 2：开发模式运行
+```bash
+cd DesktopToStartMenu
+dotnet run
+```
+
+---
+
+## 📁 目录结构
+```
+DesktopToStartMenu/
+├── publish/
+│   └── DesktopToStartMenu.exe      # 单文件便携版可执行程序
+├── Models/
+│   └── DesktopItem.cs              # 桌面项目数据模型
+├── Services/
+│   ├── ShellHelper.cs              # Windows Shell COM 与快捷方式读写工具
+│   ├── ScannerService.cs           # 桌面与开始菜单扫描比对引擎
+│   └── SyncService.cs              # 批量生成/同步快捷方式服务
+├── Forms/
+│   ├── MainForm.cs                 # 主窗口交互逻辑
+│   └── MainForm.Designer.cs        # 界面布局定义
+├── 启动工具.bat                     # 便捷双击启动批处理
+└── DesktopToStartMenu.csproj       # 工程文件 (.NET 8 WinForms)
+```

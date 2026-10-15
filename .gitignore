@@ -1,0 +1,22 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.log
+
+# Visual Studio / Rider / VS Code cache
+.vs/
+.idea/
+.vscode/
+
+# Temporary files
+*.tmp
+*.bak
+run.log
+test_output.txt
