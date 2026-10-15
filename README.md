@@ -12,17 +12,16 @@
    - 默认智能勾选所有「未添加项」；
    - 提供「仅选未添加项」、「全选」、「全不选」、「反选」等一键操作按钮。
 4. **名称规范化清理**：自动清理 Windows 生成的 `- 快捷方式`、`- 副本`、`.exe` 冗余后缀，让 Flow Launcher 索引的名字更干净整洁。
-5. **绿色免安装单文件**：采用 .NET 8 原生轻量构建，打包为单一 `.exe` 文件（仅 180 KB），开箱即用。
+5. **支持免环境独立运行**：提供 Self-Contained 单文件版（内嵌运行库，零环境依赖）与超轻量版（180 KB）。
 6. **Flow Launcher 友好**：支持一键打开开始菜单目录查看，同步完成后自动提醒唤出 Flow Launcher 输入 `reload` 刷新缓存。
 
 ---
 
-## 🚀 启动与使用
+## 🚀 下载与启动
 
-### 方式 1：直接运行已编译的单文件应用（推荐）
-双击打开：
-`DesktopToStartMenu\publish\DesktopToStartMenu.exe`
-或直接双击根目录下的 `启动工具.bat`。
+直接在 [Releases 最新发布页](https://github.com/saru54/DesktopToStartMenu/releases/tag/v1.0.0) 下载：
+* **`DesktopToStartMenu-Standalone-win-x64.exe`**：**完全零依赖独立版（推荐）**，任何新旧 Win10 / Win11 电脑双击即开，无需安装任何 .NET 环境。
+* **`DesktopToStartMenu.exe`**：超轻量版（仅 182 KB），需机器具备 .NET 8 桌面运行时。
 
 ### 方式 2：开发模式运行
 ```bash
